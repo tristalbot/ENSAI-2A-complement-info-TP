@@ -6,12 +6,15 @@ class TestAttackerPokemon:
     def test_get_coef_damage_type(self):
         # GIVEN
         garchomp = AttackerPokemon(stat_current=Statistic(speed=100, attack=100))
+        pikachu = AttackerPokemon(stat_current=Statistic(speed=500))
 
         # WHEN
-        multiplier = garchomp.get_pokemon_attack_coef()
+        garchompmultiplier = garchomp.get_pokemon_attack_coef()
+        pikachumultiplier = pikachu.get_pokemon_attack_coef()
 
         # THEN
-        assert multiplier == 2
+        assert garchompmultiplier == 2
+        assert pikachumultiplier == 3.50
 
 
 if __name__ == "__main__":
